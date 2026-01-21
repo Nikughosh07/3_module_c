@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EV Assam | Powering a Cleaner Future</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com" rel="stylesheet">
+    <script src="https://unpkg.com"></script>
+    <style>
+        body { font-family: 'Public Sans', sans-serif; background-color: #ffffff; color: #fdf8f8; }
+        h1, h2, h3 { font-family: 'Outfit', sans-serif; }
+        .glass { background: #f4e2e20d; backdrop-filter: blur(10px); border-bottom: 1px solid rgb(255, 254, 254); }
+        .card-hover:hover { transform: translateY(-5px); transition: all 0.3s ease; box-shadow: 0 10px 20px rgba(34, 197, 94, 0.2); }
+        .success-modal { display: none; }
+    </style>
+</head>
+<body class="bg-black text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass">
+        <div class="max-w-7xl mx-auto px-4 h-20 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center"><img src="2.png">
+                    <i data-lucide="zap" class="text-black"></i>
+                </div>
+                <span class="text-xl font-bold tracking-tight">EV ASSAM</span>
+            </div>
+            
+            <div class="hidden md:flex gap-8 items-center text-sm font-medium">
+                <a href="#home" class="hover:text-green-500 transition">Home</a>
+                <a href="#subsidies" class="hover:text-green-500 transition">Subsidies</a>
+                <a href="#charging" class="hover:text-green-500 transition">Charging</a>
+                <a href="#benefits" class="hover:text-green-500 transition">Benefits</a>
+                <button onclick="toggleModal()" class="bg-green-500 text-black px-6 py-2 rounded-full font-bold hover:bg-white transition">Register EV</button>
+            </div>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="md:hidden" onclick="toggleMobileMenu()">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-black p-4 border-t border-gray-800">
+            <a href="#" class="block py-2">Home</a>
+            <a href="#" class="block py-2">Subsidies</a>
+            <button onclick="toggleModal()" class="w-full mt-4 bg-green-500 text-black py-2 rounded">Register EV</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center text-center px-4 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="1.jpg" class="w-full h-full object-cover opacity-40" alt="Electric Car">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-4xl">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 text-white">Powering a <span class="text-green-500">Cleaner Assam</span></h1>
+            <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto">Join the green revolution. Get up to ₹1.5 Lakh in subsidies and zero road tax on your next electric vehicle. <strong>Assam EV Policy 2026</strong>. Join the revolution today.</p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <button class="bg-white text-black px-8 py-4 rounded-lg font-bold hover:bg-green-500 transition">Explore Subsidies</button>
+                <button class="border border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-black transition">Locate Charging</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-20 px-4 max-w-7xl mx-auto">
+        <h2 class="text-3xl font-bold mb-12 text-center">Why Go Electric?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-zinc-900 p-8 rounded-2xl card-hover border border-zinc-800">
+                <i data-lucide="wallet" class="text-green-500 w-12 h-12 mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Save ₹1 Lakh / Year</h3>
+                <p class="text-gray-400">Electricity is 80% cheaper than petrol. Reduce your monthly fuel bills significantly from day one.</p>
+            </div>
+            <div class="bg-zinc-900 p-8 rounded-2xl card-hover border border-zinc-800">
+                <i data-lucide="leaf" class="text-green-500 w-12 h-12 mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Zero Emissions</h3>
+                <p class="text-gray-400">Combat air pollution in Bhubaneswar and Cuttack. Every EV reduces 2 tons of CO2 annually.</p>
+            </div>
+            <div class="bg-zinc-900 p-8 rounded-2xl card-hover border border-zinc-800">
+                <i data-lucide="wrench" class="text-green-500 w-12 h-12 mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Low Maintenance</h3>
+                <p class="text-gray-400">No engine oil, no spark plugs, no complex transmission. Spend more time driving and less time at the workshop..</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Incentives Section -->
+    <section id="subsidies" class="py-20 px-4 bg-zinc-950">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold mb-12 text-center">Assam EV Incentives<br>Direct financial benefits for every citizen.</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Two Wheelers -->
+                <div class="border border-zinc-800 p-8 rounded-2xl bg-black">
+                    <h3 class="text-xl font-bold mb-2">Two Wheelers</h3>
+                    <div class="text-4xl font-bold text-green-500 mb-4">₹5,000</div>
+                    <p class="text-gray-400 mb-6">per kWh subsidy
+
+<br>✅ 100% Road Tax Waiver<br>
+✅ No Registration Fee<br>
+✅ Interest Subsidy</p>
+                    <button class="w-full py-3 border border-white rounded-lg hover:bg-white hover:text-black transition">Apply Now</button>
+                </div>
+                <!-- Four Wheelers -->
+                <div class="border-2 border-green-500 p-8 rounded-2xl bg-zinc-900 relative scale-105">
+                    <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-green-500 text-black text-xs font-bold px-4 py-1 rounded-full uppercase">Most Popular</span>
+                    <h3 class="text-xl font-bold mb-2">Four Wheelers</h3>
+                    <div class="text-4xl font-bold text-green-500 mb-4">₹1.5 Lakh</div>
+                    <p class="text-gray-400 mb-6">Fixed subsidy amount<br>
+
+✅ 100% Road Tax Waiver<br>
+✅ Free Charging in Assam<br>
+✅ Priority Permit<br>
+✅ Home Charger Install</p>
+                    <button class="w-full py-3 bg-green-500 text-black font-bold rounded-lg hover:bg-white transition">Most Popular, <br>Claim Now!</button>
+                </div>
+                <!-- Public Transport -->
+                <div class="border border-zinc-800 p-8 rounded-2xl bg-black">
+                    <h3 class="text-xl font-bold mb-2">Public Transport</h3>
+                    <div class="text-4xl font-bold text-green-500 mb-4">₹10,000</div>
+                    <p class="text-gray-400 mb-6">per kWh subsidy<br>
+
+✅ E-Auto Incentives<br>
+✅ Charging Priority<br>
+✅ Fleet Conversion Bonus</p>
+                    <button class="w-full py-3 border border-white rounded-lg hover:bg-white hover:text-black transition">For Business</button>
+                </div>
+            </div>
+        </div>
+    </section>
+<center>
+    <!-- Footer -->
+    <footer class="py-12 border-t border-zinc-800 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-center md:text-center">
+                <h4 class="font-bold text-lg">©Government of Assam 2026</h4>
+                <p class="text-gray-500 text-sm">Department of Transport</p>
+                <p class="text-green-500 text-xs mt-2 italic">Building a sustainable future for 4.5 crore citizen through cleaner and smart mobile</p>
+            </div>
+            
+            <div class="flex gap-6 text-sm text-gray-400">
+                <a href="#" class="hover:text-white">Policy Document</a>
+                <a href="#" class="hover:text-white">Dealers Login </a>
+                <a href="#" class="hover:text-white">Contact help</a>
+            </div>
+        </div>
+    </footer>
+</center>
+    <!-- Registration Modal -->
+    <div id="regModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+        <div class="bg-zinc-900 w-full max-w-md p-8 rounded-2xl border border-green-500 relative">
+            <button onclick="toggleModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white"><i data-lucide="x"></i></button>
+            
+            <div id="formContainer">
+                <h2 class="text-2xl font-bold mb-2 text-green-500">Register Your EV</h2>
+                <p class="text-gray-400 text-sm mb-6">Fill in your details to start your green journey.</p>
+                
+                <form id="evForm" class="space-y-4" onsubmit="handleSubmit(event)">
+                    <div>
+                        <label class="block text-xs uppercase font-bold text-gray-500 mb-1">Full Name</label>
+                        <input type="text" required class="w-full bg-black border border-zinc-700 rounded-lg px-4 py-3 focus:border-green-500 outline-none transition">
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase font-bold text-gray-500 mb-1">Email Address</label>
+                        <input type="email" required class="w-full bg-black border border-zinc-700 rounded-lg px-4 py-3 focus:border-green-500 outline-none transition">
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase font-bold text-gray-500 mb-1">Mobile Number</label>
+                        <input type="tel" required class="w-full bg-black border border-zinc-700 rounded-lg px-4 py-3 focus:border-green-500 outline-none transition">
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase font-bold text-gray-500 mb-1">City</label>
+                        <select class="w-full bg-black border border-zinc-700 rounded-lg px-4 py-3 focus:border-green-500 outline-none transition">
+                            <option>Guwahati</option>
+                            <option>Dibrugarh</option>
+                            <option>Silchar</option>
+                            <option>Jorhat</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="w-full bg-green-500 text-black font-bold py-3 rounded-lg hover:bg-white transition mt-4">Submit Registration</button>
+                </form>
+            </div>
+
+            <!-- Success Message -->
+            <div id="successMessage" class="hidden text-center py-10">
+                <div class="w-20 h-20 bg-green-500/20 text-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i data-lucide="check-circle" class="w-12 h-12"></i>
+                </div>
+                <h2 class="text-3xl font-bold mb-2">Registration Successful!</h2>
+                <p class="text-gray-400">Thank you for joining the green movement in Assam. Our team will contact you shortly.</p>
+                <button onclick="toggleModal()" class="mt-8 text-green-500 underline">Close Window</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        function toggleModal() {
+            const modal = document.getElementById('regModal');
+            modal.classList.toggle('hidden');
+            modal.classList.toggle('flex');
+            // Reset form view when closing
+            document.getElementById('formContainer').classList.remove('hidden');
+            document.getElementById('successMessage').classList.add('hidden');
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function handleSubmit(e) {
+            e.preventDefault();
+            // Simulate Database Save
+            console.log("Saving to database...");
+            
+            // UI Transition to Success
+            document.getElementById('formContainer').classList.add('hidden');
+            document.getElementById('successMessage').classList.remove('hidden');
+            lucide.createIcons();
+        }
+    </script>
+</body>
+</html>
